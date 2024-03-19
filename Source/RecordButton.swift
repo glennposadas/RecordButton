@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol RecordButtonDelegate: class {
+protocol RecordButtonDelegate: AnyObject {
 
     func tapButton(isRecording: Bool)
 }
@@ -90,7 +90,7 @@ protocol RecordButtonDelegate: class {
         let animationGroup = CAAnimationGroup()
         animationGroup.animations = [transformToStopButton, toSmallCircle]
         animationGroup.duration = 0.25
-        animationGroup.fillMode = kCAFillModeBoth
+        animationGroup.fillMode = .both
         animationGroup.isRemovedOnCompletion = false
 
         return animationGroup
